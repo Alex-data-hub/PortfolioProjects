@@ -1,17 +1,22 @@
+--Covid 19 Data Exploration
 Select *
 From PortfolioProject..CovidDeaths$
 where continent is not null
 order by 3,4
+
+
 Select *
 From PortfolioProject..CovidVaccinations$
 order by 3,4
+
+
 --Select Data that we are going to be using
 Select Location,date,total_cases,new_cases,total_deaths,population
 From PortfolioProject..CovidDeaths$
 where continent is not null
 order by 1,2
 
--- looking as Total Cases vs total Deaths
+-- Total Cases vs total Deaths
 --shows likelihood of dying if you contract covid in your country
 Select Location,date,total_cases,total_deaths,(total_deaths/total_cases)*100 as DeathPercentage
 From PortfolioProject..CovidDeaths$
